@@ -208,8 +208,7 @@
         transition: 0.3s;
         outline: none;
         background: transparent;
-        border: 0px;
-        cursor: pointer; }
+        border: 0px; }
       .seccion1 .border_search .match_list_styles {
         list-style: none;
         color: #9cafc3;
@@ -466,15 +465,13 @@
         transition: 0.3s;
         outline: none;
         background: transparent;
-        border: 0px;
-        cursor: pointer; }
+        border: 0px; }
       .seccion1 .border_search .match_list_styles {
         list-style: none;
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
         margin-left: 23px;
-        padding: 12px;
-        cursor: pointer; }
+        padding: 8px; }
 
   .seccion2 {
     margin-top: 73px;

@@ -5,6 +5,10 @@ const search = document.querySelector("#icon_buscador");
 const containerList = document.querySelector("#match_list");
 let searchResults = document.querySelector("#resultados_busqueda");
 let seccion2 = document.querySelector(".seccion2");
+const closeBttn = document.querySelector("#xbutton");
+let verMas = document.querySelector("#ver_mas");
+let h2SearchResults = document.querySelector("#titulo_busqueda");
+let matchList = document.querySelector("#match_list");
 //--endpoint de los trending tags
 const trendingTagsEndpoint = "https://api.giphy.com/v1/trending/searches";
 const apiKey = "wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
@@ -49,7 +53,10 @@ const autocomplete = async (ev) => {
         "click",
         (e) => (searchInput.value = e.target.innerText)
       );
+      newLi.onclick = () => searchContent();
       containerList.appendChild(newLi);
+      search.style.display = "none";
+      closeBttn.style.display = "block";
     });
   }
 };
@@ -59,9 +66,13 @@ const searchContent = async (search) => {
   let gifosSearch = "";
   if (typeof search != "undefined") {
     searchInput.value = search;
+    h2SearchResults.style.display = "block";
+    matchList.style.display = "block";
   }
 
   gifosSearch = await getGifosSearch(Paginacion, searchInput?.value);
+  h2SearchResults.style.display = "block";
+  matchList.style.display = "block";
 
   fetchSearch(gifosSearch);
 };
@@ -139,6 +150,24 @@ const fetchSearch = (arr, flagViemore = false) => {
   }
 };
 
+// --- Vuelve los seteos del contenedor a la configuración inicial
+const cleanResultsContianer = () => {
+  searchResults.classList.add("hidden");
+  searchResults.innerHTML = "";
+  searchInput.placeholder = "Busca GIFOS y más";
+  verMas.style.visibility = "hidden";
+  h2SearchResults.style.display = "none";
+  if ((searchInput.value = "")) {
+    matchList.style.display = "none";
+  } else {
+    matchList.style.display = "block";
+  }
+
+  search.style.display = "block";
+  closeBttn.style.display = "none";
+  searchInput.value = "";
+};
+
 //Trending TAGS
 
 const getTrendingTags = async () => {
@@ -157,7 +186,11 @@ const displayTrendingTags = (trendingTags) => {
   for (let i = 0; i < 6; i++) {
     const trendingTagItem = document.createElement("span");
     trendingTagItem.classList.add("trending__item");
-    trendingTagItem.onclick = () => searchContent(trendingTags.data[i]);
+    trendingTagItem.onclick = () => {
+      searchContent(trendingTags.data[i]);
+      search.style.display = "none";
+      closeBttn.style.display = "block";
+    };
 
     trendingTagItem.innerHTML = `${trendingTags.data[i]}`;
     $trendingTagList.appendChild(trendingTagItem);
@@ -177,3 +210,5 @@ document
     e.preventDefault();
     searchContent();
   });
+
+closeBttn.onclick = () => cleanResultsContianer();

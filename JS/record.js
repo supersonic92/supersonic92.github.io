@@ -29,6 +29,9 @@ subir.addEventListener("click", function (ev) {
     username: actualPreviewId,
   });
   localStorage.setItem("misGifos", JSON.stringify(misGifos));
+  alert(
+    'Tu gifo se ha creado con exito, podras ver los gifos creados en la seccion de "MIS GIFOS"'
+  );
 });
 
 // fetch upload endpoint
