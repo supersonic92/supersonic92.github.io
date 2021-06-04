@@ -6,7 +6,7 @@ const repetir = document.querySelector("#repeatShot");
 let recording = false;
 
 const uploadEndpoint =
-  "http://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
+  "https://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
 
 //show recorded gif
 function mostrarPreview({ id }) {
