@@ -46,6 +46,8 @@ const autocomplete = async (ev) => {
   ev.preventDefault();
   containerList.innerHTML = "";
   border_search.style.height = "50px";
+  search.style.display='block'
+  closeBttn.style.display='none'
   if (ev.target.value.length >= 3) {
     const tags = await getSearchTags(ev.target.value);
     tags.data.map((tag) => {
@@ -165,6 +167,7 @@ const cleanResultsContianer = () => {
   h2SearchResults.style.display = "none";
   if ((searchInput.value = "")) {
     matchList.style.display = "none";
+    matchList.innerHTML = '';
   } else {
     matchList.style.display = "block";
   }
@@ -173,6 +176,7 @@ const cleanResultsContianer = () => {
   closeBttn.style.display = "none";
   searchInput.value = "";
 };
+
 
 //Trending TAGS
 
