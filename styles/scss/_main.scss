@@ -84,6 +84,16 @@
         font-family: "Roboto", sans-serif;
         margin-left: 23px;
         padding: 3px;
+        
+
+        li{
+          padding: 2px;
+          cursor: pointer;
+          &::before{
+            content: url(/assets/icon-search.svg);
+            padding-right: 4px;
+          }
+        }
       }
     }
   }
@@ -358,10 +368,18 @@
         list-style: none;
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
+        font-size: 1.5em;
         margin-left: 23px;
-        padding: 12px;
-        cursor: pointer;
-        // border: 0.1em solid #572ee5;
+
+        li{
+          padding: 4px;
+          cursor: pointer;
+          &::before{
+            content: url(/assets/icon-search.svg);
+            padding-right: 4px;
+          }
+        }
+        
       }
     }
   }

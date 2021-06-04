@@ -9,6 +9,7 @@ const closeBttn = document.querySelector("#xbutton");
 let verMas = document.querySelector("#ver_mas");
 let h2SearchResults = document.querySelector("#titulo_busqueda");
 let matchList = document.querySelector("#match_list");
+const border_search = document.querySelector(".border_search");
 //--endpoint de los trending tags
 const trendingTagsEndpoint = "https://api.giphy.com/v1/trending/searches";
 const apiKey = "wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
@@ -44,6 +45,7 @@ const autocomplete = async (ev) => {
   if (ev.key == "Enter") return;
   ev.preventDefault();
   containerList.innerHTML = "";
+  border_search.style.height = "50px";
   if (ev.target.value.length >= 3) {
     const tags = await getSearchTags(ev.target.value);
     tags.data.map((tag) => {
@@ -55,10 +57,13 @@ const autocomplete = async (ev) => {
       );
       newLi.onclick = () => searchContent();
       containerList.appendChild(newLi);
+      
+      border_search.style.height = "250px";
       search.style.display = "none";
       closeBttn.style.display = "block";
     });
   }
+  
 };
 
 //getting input for search
@@ -143,6 +148,7 @@ const fetchSearch = (arr, flagViemore = false) => {
           let verMas = document.querySelector("#ver_mas");
           verMas.style.visibility = "visible";
           verMas.addEventListener("click", viewMore);
+          border_search.style.height = "50px";
         },
         SEARCH
       );
