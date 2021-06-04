@@ -60,7 +60,7 @@ const autocomplete = async (ev) => {
       newLi.onclick = () => searchContent();
       containerList.appendChild(newLi);
       
-      border_search.style.height = "250px";
+      border_search.style.height = "340px";
       search.style.display = "none";
       closeBttn.style.display = "block";
     });
