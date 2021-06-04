@@ -1,0 +1,166 @@
+@media screen and (max-width: 768px) {
+  .mode_dark {
+    background-color: #37383c;
+    .blueline {
+      display: none;
+    }
+
+    header {
+      .navbar {
+        ul {
+          background-color: #000000;
+        }
+
+        span {
+          background-color: #ffffff;
+        }
+
+        .circulo_cruz > ul {
+          background: #000000;
+        }
+
+        a {
+          color: #ffffff;
+        }
+        #dark_mode {
+          color: #ffffff;
+        }
+        .linea {
+          border: 1px solid #ffffff;
+        }
+      }
+    }
+
+    .seccion1 {
+      h1 {
+        color: #ffffff;
+      }
+
+      .border_search {
+        #buscador {
+          background-color: #37383c;
+          color: #9cafc3;
+        }
+      }
+    }
+    .seccion2 {
+      h3 {
+        color: #ffffff;
+      }
+      p {
+        color: #ffffff;
+      }
+    }
+    .seccion3 {
+      background: #222326;
+
+      h2 {
+        color: #ffffff;
+      }
+      P {
+        color: #ffffff;
+      }
+    }
+    footer {
+      #compartir_enid {
+        color: #ffffff;
+      }
+      i > img {
+        padding: 22px 20px 46px 0px;
+      }
+      #rightsid {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        margin-bottom: 23px;
+      }
+    }
+    .linea_azul_footer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mode_dark {
+    background-color: #37383c;
+
+    .blueline {
+      display: none;
+    }
+
+    header {
+      .navbar {
+        span {
+          background-color: #ffffff;
+        }
+
+        .circulo_cruz > ul {
+          background: #000000;
+        }
+
+        a {
+          color: #ffffff;
+        }
+        #dark_mode {
+          color: #ffffff;
+          cursor: pointer;
+        }
+        // .linea{
+        //     border: 1px solid #FFFFFF;
+
+        // }
+      }
+    }
+
+    .seccion1 {
+      h1 {
+        color: #ffffff;
+      }
+
+      .border_search {
+        #buscador {
+          background-color: #37383c;
+          color: #9cafc3;
+        }
+      }
+    }
+    .seccion2 {
+      h3 {
+        color: #ffffff;
+      }
+      p {
+        color: #ffffff;
+      }
+    }
+    .seccion3 {
+      background: #222326;
+
+      h2 {
+        color: #ffffff;
+      }
+      P {
+        color: #ffffff;
+      }
+    }
+    footer {
+      #compartir_enid {
+        color: #ffffff;
+      }
+      i > img {
+        padding: 22px 20px 46px 0px;
+      }
+      #rightsid {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        margin-bottom: 23px;
+      }
+    }
+    .linea_azul_footer {
+      display: none;
+    }
+  }
+}

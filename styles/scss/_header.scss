@@ -1,0 +1,137 @@
+@media screen and (max-width: 768px) {
+  .blueline {
+    width: 100%;
+    height: 5px;
+    background: #572ee5;
+  }
+  header {
+    margin: 15px 22px 17px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .logo2 {
+      display: none;
+    }
+
+    .navbar {
+      input[type="checkbox"] {
+        position: absolute;
+        width: 16px;
+        height: 24px;
+        opacity: 0;
+        z-index: 10;
+
+        &:checked ~ .hamburguer_menu > ul {
+          opacity: 1;
+          height: 445px;
+        }
+      }
+
+      span {
+        width: 15px;
+        height: 2px;
+        background-color: #572ee5;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .hamburguer_menu > ul {
+        position: absolute;
+        opacity: 0;
+        top: 14.8%;
+        width: 100%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: rgba(87, 46, 229, 0.9);
+        z-index: 10;
+        height: 0;
+        padding-top: 32px;
+        list-style: none;
+      }
+      li {
+        font-size: 15px;
+        text-align: center;
+        line-height: 30px;
+        margin: 0 auto;
+      }
+      .cruz {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+      }
+      #dark_mode {
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+      }
+      .linea {
+        opacity: 0.5;
+        border: 1px solid #ffffff;
+        width: 41px;
+        display: block;
+        margin: 11px auto 13.9px auto;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .blueline {
+    width: 100%;
+    height: 5px;
+    background: #572ee5;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 46px 100px 110px;
+    .logo1 {
+      display: none;
+    }
+
+    nav {
+      input {
+        display: none;
+      }
+    }
+    ul {
+      display: flex;
+    }
+    li {
+      list-style: none;
+      padding-right: 50px;
+    }
+
+    .hoverLine {
+      &:hover {
+        border-bottom: 0.2em solid #5ed7c6;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #572ee5;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+    }
+
+    #dark_mode {
+      color: #572ee5;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hamburguer_menu {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
