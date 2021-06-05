@@ -82,7 +82,7 @@ function getStreamAndRecord() {
 
       const recorder = RecordRTC(stream, {
         type: "gif", // audio or video or gif or canvas
-        frameRate: 0.5,
+        frameRate: 1,
         quality: 10,
         width: 360,
         hidden: 240,

@@ -167,7 +167,7 @@ const cleanResultsContianer = () => {
   closeBttn.style.display='none'
   h2SearchResults.innerHTML=''
   searchResults.innerHTML=''
-  verMas.style.display='none'
+  verMas.style.visibility='hidden'
   
 };
 
