@@ -161,20 +161,14 @@ const fetchSearch = (arr, flagViemore = false) => {
 // --- Vuelve los seteos del contenedor a la configuración inicial
 const cleanResultsContianer = () => {
   searchResults.classList.add("hidden");
-  searchResults.innerHTML = "";
-  searchInput.placeholder = "Busca GIFOS y más";
-  verMas.style.visibility = "hidden";
-  h2SearchResults.style.display = "none";
-  if ((searchInput.value = "")) {
-    matchList.style.display = "none";
-    matchList.innerHTML = '';
-  } else {
-    matchList.style.display = "block";
-  }
-
-  search.style.display = "block";
-  closeBttn.style.display = "none";
-  searchInput.value = "";
+  containerList.innerHTML = "";
+  border_search.style.height = "50px";
+  search.style.display='block'
+  closeBttn.style.display='none'
+  h2SearchResults.innerHTML=''
+  searchResults.innerHTML=''
+  verMas.style.display='none'
+  
 };
 
 
