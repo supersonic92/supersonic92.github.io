@@ -147,7 +147,6 @@ const fetchSearch = (arr, flagViemore = false) => {
             );
           e.children[0].children[0].onclick = (y) => addFav(y.target, SEARCH);
           containerList.innerHTML = "";
-          let verMas = document.querySelector("#ver_mas");
           verMas.style.visibility = "visible";
           verMas.addEventListener("click", viewMore);
           border_search.style.height = "50px";
