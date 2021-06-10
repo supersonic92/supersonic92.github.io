@@ -44,10 +44,12 @@ const getGifosSearch = async (Paginacion, query) => {
 const autocomplete = async (ev) => {
   if (ev.key == "Enter") return;
   ev.preventDefault();
+
   containerList.innerHTML = "";
   border_search.style.height = "50px";
-  search.style.display='block'
-  closeBttn.style.display='none'
+  search.style.display = "block";
+  closeBttn.style.display = "none";
+
   if (ev.target.value.length >= 3) {
     const tags = await getSearchTags(ev.target.value);
     tags.data.map((tag) => {
@@ -59,13 +61,12 @@ const autocomplete = async (ev) => {
       );
       newLi.onclick = () => searchContent();
       containerList.appendChild(newLi);
-      
+
       border_search.style.height = "340px";
       search.style.display = "none";
       closeBttn.style.display = "block";
     });
   }
-  
 };
 
 //getting input for search
@@ -162,16 +163,12 @@ const cleanResultsContianer = () => {
   searchResults.classList.add("hidden");
   containerList.innerHTML = "";
   border_search.style.height = "50px";
-  search.style.display='block'
-  closeBttn.style.display='none'
-  h2SearchResults.innerHTML=''
-  searchResults.innerHTML=''
-  verMas.style.visibility='hidden'
-  
+  search.style.display = "block";
+  closeBttn.style.display = "none";
+  h2SearchResults.innerHTML = "";
+  searchResults.innerHTML = "";
+  verMas.style.visibility = "hidden";
 };
-
-
-//Trending TAGS
 
 const getTrendingTags = async () => {
   await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
@@ -201,6 +198,11 @@ const displayTrendingTags = (trendingTags) => {
 };
 
 searchInput?.addEventListener("keyup", autocomplete);
+
+searchInput.onkeyup = () => {
+  closeBttn.style.display = "block";
+  search.style.display = "none";
+};
 
 document.addEventListener("keypress", async (e) => {
   if (e.key == "Enter") {
